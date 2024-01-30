@@ -35,5 +35,21 @@ cp GitAiHooks ~/sources/.githooks
 git config --global core.hooksPath ~/sources/.githooks
 ```
 
-Enjoy.
+Enjoy :)
 
+### Bypassing commit hook
+
+git "--no-verify" command line option cannot be used for bypassing this hook. If you want to temporarily disable this hook,
+you commit your changes with the following command:
+
+>git -c core.hookspath=/dev/null
+
+or you can put this in a script suitable in your system:
+
+```bash
+#!/bin/bash
+
+git -c core.hookspath=/dev/null $*
+```
+
+then call this script with any git command you want.
