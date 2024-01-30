@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 		commitTempFile = args[1];
 	} else {
 		/* ammend or merge commit */
-		a.exit(0);
+		return 0;
 	}
 
 	OpenAI gpt(key);
